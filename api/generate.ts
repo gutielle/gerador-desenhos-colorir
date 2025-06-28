@@ -1,4 +1,3 @@
-
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI, GenerateImagesResponse } from "@google/genai";
 
@@ -37,8 +36,9 @@ export default async function handler(
       },
     });
 
-    if (response.generatedImages && response.generatedImages.length > 0 && response.generatedImages[0].image.imageBytes) {
-      const base64Image = response.generatedImages[0].image.imageBytes;
+    const base64Image = response?.generatedImages?.[0]?.image?.imageBytes;
+
+    if (base64Image) {
       return res.status(200).json({ image: base64Image });
     } else {
       console.error("A API não retornou uma resposta de imagem válida:", response);
