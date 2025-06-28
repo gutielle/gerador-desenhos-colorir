@@ -1,0 +1,5 @@
+{
+  "name": "Gerador de Desenhos para Colorir",
+  "description": "Um aplicativo web que utiliza IA para gerar desenhos para colorir a partir de descrições de texto do usuário. Perfeito para crianças e adultos soltarem a criatividade.",
+  "requestFramePermissions": []
+}
