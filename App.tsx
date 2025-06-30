@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Loader2, Download, WandSparkles } from 'lucide-react';
 
 export default function ColoringApp() {
   const [prompt, setPrompt] = useState('');
@@ -62,9 +61,9 @@ export default function ColoringApp() {
 
       <button
         onClick={handleGenerate}
-        className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-full text-lg font-semibold flex items-center gap-2"
+        className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-full text-lg font-semibold"
       >
-        {loading ? <Loader2 className="animate-spin" /> : <WandSparkles />} Gerar desenho
+        {loading ? 'Gerando...' : 'Gerar desenho'}
       </button>
 
       {image && (
@@ -73,9 +72,9 @@ export default function ColoringApp() {
           <a
             href={image}
             download="desenho-para-colorir.jpg"
-            className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-full"
+            className="bg-gray-800 text-white px-4 py-2 rounded-full"
           >
-            <Download size={18} /> Baixar desenho
+            Baixar desenho
           </a>
         </div>
       )}
