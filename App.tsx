@@ -17,6 +17,15 @@ export default function ColoringApp() {
     setLoading(true);
     setImage(null);
 
+     // 🔴 TAG PERSONALIZADA PARA O GTM// 
+     window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'gerar_desenho',
+  categoria: 'interacao',
+  acao: 'clique_botao',
+  label: prompt  // isso envia o texto que o usuário digitou
+});
+
     try {
       const res = await fetch('/api/generate', {
         method: 'POST',
@@ -30,15 +39,6 @@ export default function ColoringApp() {
     } finally {
       setLoading(false);
     }
-    
-    window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'gerar_desenho',
-  categoria: 'interacao',
-  acao: 'clique_botao',
-  label: prompt  // isso envia o texto que o usuário digitou
-});
-
   };
 
   return (
