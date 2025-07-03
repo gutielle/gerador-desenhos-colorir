@@ -30,6 +30,15 @@ export default function ColoringApp() {
     } finally {
       setLoading(false);
     }
+    
+    window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'gerar_desenho',
+  categoria: 'interacao',
+  acao: 'clique_botao',
+  label: prompt  // isso envia o texto que o usuário digitou
+});
+
   };
 
   return (
