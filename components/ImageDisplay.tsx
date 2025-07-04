@@ -18,8 +18,6 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error,
     link.href = imageUrl;
     link.download = `${fileName}.jpeg`;
     document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
 
       window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
@@ -28,6 +26,9 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error,
     acao: 'clique_botao_download',
     label: prompt
   });
+  
+    link.click();
+    document.body.removeChild(link);
 
   };
 
