@@ -38,15 +38,16 @@ window.dataLayer.push({
       alert('Erro ao gerar imagem');
     } finally {
       setLoading(false);
-    }
 
-    // 🔴 TAG PERSONALIZADA PARA O GTM// 
+      // 🔴 TAG PERSONALIZADA PARA O GTM// 
      window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'baixar_desenho',
   categoria: 'interacao',
   acao: 'clique_botao',
   label: prompt
+  
+    }
 
   };
 
