@@ -12,14 +12,8 @@ interface ImageDisplayProps {
 const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error, prompt }) => {
   const downloadImage = () => {
     if (!imageUrl) return;
-  
-    const link = document.createElement('a');
-    const fileName = prompt.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'desenho_para_colorir';
-    link.href = imageUrl;
-    link.download = `${fileName}.jpeg`;
-    document.body.appendChild(link);
 
-      window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'download_desenho',
     categoria: 'interacao',
@@ -27,6 +21,11 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error,
     label: prompt
   });
   
+    const link = document.createElement('a');
+    const fileName = prompt.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'desenho_para_colorir';
+    link.href = imageUrl;
+    link.download = `${fileName}.jpeg`;
+    document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
