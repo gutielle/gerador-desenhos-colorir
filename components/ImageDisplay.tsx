@@ -12,14 +12,6 @@ interface ImageDisplayProps {
 const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error, prompt }) => {
   const downloadImage = () => {
     if (!imageUrl) return;
-
-          // 🔴 TAG PERSONALIZADA PARA O GTM// 
-     window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'baixar_desenho',
-  categoria: 'interacao',
-  acao: 'clique_botao',
-  label: prompt
   
     const link = document.createElement('a');
     const fileName = prompt.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'desenho_para_colorir';
@@ -28,6 +20,14 @@ window.dataLayer.push({
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+      // 🔴 TAG PERSONALIZADA PARA O GTM// 
+     window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'baixar_desenho',
+  categoria: 'interacao',
+  acao: 'clique_botao',
+  label: prompt
   };
 
   return (
