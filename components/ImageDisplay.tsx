@@ -13,7 +13,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error,
   const downloadImage = () => {
     if (!imageUrl) return;
 
-    window.dataLayer = window.dataLayer || [];
+     window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'download_desenho',
     categoria: 'interacao',
