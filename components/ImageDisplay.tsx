@@ -21,7 +21,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imageUrl, isLoading, error,
 
       window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: 'baixar_desenho',
+    event: 'download_desenho',
     categoria: 'interacao',
     acao: 'clique_botao_download',
     label: prompt
